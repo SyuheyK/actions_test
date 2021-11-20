@@ -9,6 +9,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      
       - name: create issue by template
         uses: JasonEtco/create-an-issue@v2
         env:
