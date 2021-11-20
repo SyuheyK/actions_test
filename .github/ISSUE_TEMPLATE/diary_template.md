@@ -1,7 +1,7 @@
 ---
 name: diary_template
 about: diary template
-title: ''
+title: diary
 labels: ''
 assignees: ''
 
