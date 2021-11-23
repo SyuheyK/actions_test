@@ -18,6 +18,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # This is assuming that you are triggering off the issue, otherwise you will need to know the issue number
           issue_id: ${{ github.event.issue.number }}
+          payload: yaml
           payload_marker: test
           
       - name: Add comment
