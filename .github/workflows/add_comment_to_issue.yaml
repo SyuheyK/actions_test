@@ -11,9 +11,19 @@ jobs:
     permissions:
       issues: write
     steps:
+      - name: Issue Body Parser
+        uses: peter-murray/issue-body-parser-action@v1
+        id: parser
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # This is assuming that you are triggering off the issue, otherwise you will need to know the issue number
+          issue_id: ${{ github.event.issue.number }}
+          payload_marker: test
+          
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1.4.5
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
             これはあたらしくできた issue だお．
+            ${{ steps.parser.outputs.payload }}
