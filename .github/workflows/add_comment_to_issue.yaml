@@ -36,10 +36,7 @@ jobs:
 
       - name: Run Python Code
         id: python_run
-        run: |
-          import os
-          print(os.getcwd())
-        shell: python
+        run: python ./src/test.py
 
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1.4.5
