@@ -36,7 +36,10 @@ jobs:
 
       - name: Run Python Code
         id: python_run
-        run: python ./src/test.py
+        run: |
+          import os
+          print(os.listdir())
+        shell: python
 
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1.4.5
