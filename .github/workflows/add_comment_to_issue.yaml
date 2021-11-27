@@ -38,7 +38,7 @@ jobs:
         id: python_run
         run: |
           import os
-          print([f.name for f in os.scandir()])
+          print(os.getcwd(".."))
         shell: python
 
       - name: Add comment
