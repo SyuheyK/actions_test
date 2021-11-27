@@ -36,7 +36,10 @@ jobs:
 
       - name: Run Python Code
         id: python_run
-        run: echo $PATH
+        run:　|
+          import os
+          print(os.environ['PATH'])
+        shell: python
 
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1.4.5
