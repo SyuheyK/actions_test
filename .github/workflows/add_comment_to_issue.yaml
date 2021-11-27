@@ -36,7 +36,7 @@ jobs:
 
       - name: Run Python Code
         id: python_run
-        run:　|
+        run: |
           import os
           print(os.environ['PATH'])
         shell: python
