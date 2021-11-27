@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-python@v2.3.0
         with:
           python-version: ${{ matrix.python-version }}
-          
+
       - name: Issue Body Parser
         uses: peter-murray/issue-body-parser-action@v1
         id: parser
