@@ -7,10 +7,23 @@ on:
 jobs:
   add-comment:
     if: github.event.label.name == 'テスト'
+
     runs-on: ubuntu-latest
+
     permissions:
       issues: write
+
+    strategy:
+      matrix:
+        python-version: [3.7]
+
     steps:
+      # Setup Python
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2.3.0
+        with:
+          python-version: ${{ matrix.python-version }}
+
       - name: Issue Body Parser
         uses: peter-murray/issue-body-parser-action@v1
         id: parser
