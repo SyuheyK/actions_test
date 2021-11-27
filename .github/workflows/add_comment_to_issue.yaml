@@ -38,7 +38,7 @@ jobs:
         id: python_run
         run: |
           import os
-          print(os.listdir())
+          print([f.name for f in os.scandir()])
         shell: python
 
       - name: Add comment
