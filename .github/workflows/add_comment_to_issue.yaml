@@ -38,7 +38,7 @@ jobs:
         id: python_run
         run: |
           import os
-          print(os.environ['PATH'])
+          print(os.getcwd())
         shell: python
 
       - name: Add comment
