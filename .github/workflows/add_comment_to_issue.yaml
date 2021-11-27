@@ -38,7 +38,7 @@ jobs:
         id: python_run
         run: |
           import os
-          print(os.getcwd(".."))
+          print(os.listdir(".."))
         shell: python
 
       - name: Add comment
