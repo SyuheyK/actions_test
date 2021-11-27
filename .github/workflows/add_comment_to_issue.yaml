@@ -36,7 +36,7 @@ jobs:
 
       - name: Run Python Code
         id: python_run
-        run: python test.py
+        run: python ../src/test.py
 
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1.4.5
