@@ -2,7 +2,7 @@ import argparse
 import json
 parser = argparse.ArgumentParser()
 parser.add_argument("sql_file", nargs=1, help="template SQL file to modify.", type=str)
-parser.add_argument("json_string", nargs=2, help="JSON string which specify the table schema for the output SQL.", type=str)
+parser.add_argument("json_string", nargs=1, help="JSON string which specify the table schema for the output SQL.", type=str)
 args = parser.parse_args()
 
 template_query = open(args.sql_file, 'r').read().replace('\n', ' ')#, encoding='UTF-8')
