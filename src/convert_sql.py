@@ -19,10 +19,10 @@ condition_string2_list = list(dict.fromkeys(condition_string2_list))
 column_name_list = list(dict.fromkeys(column_name_list))
 
 query = template_query.format(
-      table_name=jsn['table_name'], 
-      condition_string1=jsn['condition_string1'], 
-      column_names = ", ".join(column_name_list), 
-      event_names = ", ".join(condition_string2_list)
+      table_name=jsn['table_name'],
+      condition_string1=jsn['condition_string1'],
+      condition_string2 = ", ".join(condition_string2_list),
+      column_names = ", ".join(column_name_list)
 )
 
 print("::set-output name=test::" + query)
