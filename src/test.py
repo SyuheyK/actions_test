@@ -6,4 +6,4 @@ args = parser.parse_args()
 
 test = open(args.echo, 'r').read()
 
-print("::set-output name=test::" + test)
+print("::set-output name=test::" + str(test))
