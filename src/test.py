@@ -1,3 +1,7 @@
-import json 
+import json
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("echo", help="echo the string you use here")
+args = parser.parse_args()
 
-print("::set-output name=test::testです")
+print("::set-output name=test::" + args.echo)
