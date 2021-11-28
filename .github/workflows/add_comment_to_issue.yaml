@@ -55,4 +55,4 @@ jobs:
         run: echo ${{ steps.parser.outputs.payload }}
 
       - name: Resulting SQL
-        run: echo ${{ steps.python_run.outputs.test }}
+        run: echo '${{ steps.python_run.outputs.test }}''
