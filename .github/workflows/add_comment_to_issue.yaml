@@ -19,6 +19,10 @@ jobs:
         python-version: [3.7]
 
     steps:
+      # Checkout
+      - name: Checkout
+        uses: actions/checkout@v2
+
       # Setup Python
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2.3.0
@@ -45,7 +49,7 @@ jobs:
         id: python_run
         run: |
           import os
-          print(os.listdir("../../_actions"))
+          print(os.listdir(""))
         shell: python
 
       - name: Add comment
