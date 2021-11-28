@@ -5,8 +5,8 @@ parser.add_argument("sql_file", nargs=1, help="template SQL file to modify.", ty
 parser.add_argument("json_string", nargs=1, help="JSON string which specify the table schema for the output SQL.", type=str)
 args = parser.parse_args()
 
-template_query = open(args.sql_file, 'r').read().replace('\n', ' ')#, encoding='UTF-8')
-jsn = json.loads(args.json_string)
+template_query = open(args.sql_file[0], 'r').read().replace('\n', ' ')#, encoding='UTF-8')
+jsn = json.loads(args.json_string[0])
 
 condition_string2_list = []
 column_name_list = []
