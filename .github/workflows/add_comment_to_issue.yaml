@@ -39,12 +39,6 @@ jobs:
           payload: yaml
           payload_marker: test
 
-      - name: List files in the repository
-        run: ls -af ${{ github.workspace }}
-
-      - name: Display current directory
-        run: pwd
-
       - name: Run Python Code
         id: python_run
         run: python ./src/test.py
@@ -57,3 +51,9 @@ jobs:
             これはあたらしくできた issue だお．
             ${{ steps.parser.outputs.payload }}
             ${{ steps.python_run.outputs.test}}
+
+      - name: List files in the repository
+        run: ls -af ${{ github.workspace }}
+
+      - name: Display current directory
+        run: pwd
