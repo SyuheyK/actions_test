@@ -10,14 +10,17 @@ assignees: ''
 テストです
 
 ```yaml test
-test1: 
-  test1_1: テストです
-  test1_2: 
-    - テスト1
-    - テスト2
-    - テスト3
-test2: 
-  test2_1: "テスト2"
-  test2_2: true
-  test2_3: null
+table_name: this_is_table_name
+condition_string1: this_is_first_condition
+condition2:
+  condition_string2: this_is_second_condition
+  column_names:
+   - column_name1
+   - column_name2
+   - column_name3
+condition3:
+  condition_string2: this_is_third_condition
+  column_names:
+   - column_name1
+   - column_name4
 ```
