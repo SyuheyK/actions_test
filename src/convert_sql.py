@@ -6,7 +6,7 @@ parser.add_argument("json_string", nargs=2, help="JSON string which specify the 
 args = parser.parse_args()
 
 template_query = open(args.sql_file, 'r').read()#, encoding='UTF-8')
-jsn = json.loads(json_string)
+jsn = json.loads(args.json_string)
 
 condition_string2_list = []
 column_name_list = []
