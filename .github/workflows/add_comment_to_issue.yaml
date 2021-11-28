@@ -41,7 +41,7 @@ jobs:
 
       - name: Run Python Code
         id: python_run
-        run: python ./src/convert_sql.py ./src/template.sql, '${{ steps.parser.outputs.payload }}'
+        run: python ./src/convert_sql.py ./src/template.sql '${{ steps.parser.outputs.payload }}'
 
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1.4.5
