@@ -1,5 +1,6 @@
 name: Add comment
 on:
+  workflow_dispatch:
   issues:
     types:
       - opened
@@ -33,6 +34,10 @@ jobs:
           issue_id: ${{ github.event.issue.number }}
           payload: yaml
           payload_marker: test
+
+      - name: List files in the repository
+        run: |
+          ls -af ${{ github.workspace }}
 
       - name: Run Python Code
         id: python_run
