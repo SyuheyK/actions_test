@@ -41,7 +41,7 @@ jobs:
 
       - name: Run Python Code
         id: python_run
-        run: python ./src/test.py ${{ steps.parser.outputs.payload }}
+        run: python ./src/test.py '${{ steps.parser.outputs.payload }}''
 
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1.4.5
@@ -50,7 +50,7 @@ jobs:
           body: |
             これはあたらしくできた issue だお．
             ${{ steps.parser.outputs.payload }}
-            
+
             ${{ steps.python_run.outputs.test}}
 
       - name: List files in the repository
