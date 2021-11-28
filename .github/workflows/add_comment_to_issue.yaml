@@ -41,7 +41,7 @@ jobs:
 
       - name: Run Python Code
         id: python_run
-        run: python ./src/test.py ./src/template.sql #'${{ steps.parser.outputs.payload }}'
+        run: python ./src/convert_sql.py ./src/template.sql '${{ steps.parser.outputs.payload }}'
 
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1.4.5
@@ -51,8 +51,8 @@ jobs:
             これはあたらしくできた issue だお．
             ${{ steps.python_run.outputs.test}}
 
-      - name: Resulting JSON file
+      - name: Resulting JSON string
         run: echo ${{ steps.parser.outputs.payload }}
 
-      - name: Resulting SQL file
+      - name: Resulting SQL
         run: echo ${{ steps.python_run.outputs.test }}
