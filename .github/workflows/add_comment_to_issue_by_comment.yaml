@@ -8,7 +8,7 @@ permissions:
   id-token: write
 jobs:
   add-comment:
-    if: github.event.label.name == 'テスト'
+    if: ${{ !github.event.issue.pull_request && github.event.issue.state != 'closed' && startsWith(github.event.comment.body, '/add_comment') && contains(github.event.issue.labels.*.name, 'テスト') }}
 
     runs-on: ubuntu-latest
 
