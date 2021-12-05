@@ -50,8 +50,8 @@ jobs:
             ${{ steps.parser.outputs.payload }}
 #            ${{ steps.python_run.outputs.test}}
 
-      - name: output value in json
-        run: echo "${{fromJson(steps.parser.outputs.payload).table_name}}"
+      - name: output string made of value in json
+        run: echo "table_name_of_${{fromJson(steps.parser.outputs.payload).table_name}}_$(date +'%Y%m%d')"
 
       - name: output date
         run: echo $(date +'%Y%m%d')
