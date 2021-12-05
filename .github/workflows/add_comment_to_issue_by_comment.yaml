@@ -48,9 +48,13 @@ jobs:
           body: |
             これはあたらしくできた comment だお．
             ${{ steps.parser.outputs.payload }}
-            ${{ steps.parser.outputs.payload.table_name }}
-            $(date +'%Y%m%d')
 #            ${{ steps.python_run.outputs.test}}
+
+      - name: output value in json
+        run: echo "${{fromJson(steps.parser.outputs.payload).table_name}}"
+
+      - name: output date
+        run: echo $(date +'%Y%m%d')
 
       # - name: Resulting JSON string
       #   run: echo ${{ steps.parser.outputs.payload }}
