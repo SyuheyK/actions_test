@@ -45,8 +45,8 @@ jobs:
         run: echo "table_name_of_${{fromJson(steps.parser.outputs.payload).table_name}}_$(date +'%Y%m%d')"
 
       - name: workflow execution date
-        run: echo "::set-output name=execution-date::$(date +'%Y%m%d')"
         id: workflow-execution-date
+        run: echo "::set-output name=execution-date::$(date +'%Y%m%d')"
 
       - name: Add comment
         uses: peter-evans/create-or-update-comment@v1.4.5
@@ -54,7 +54,7 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           body: |
             これはあたらしくできた comment だお．
-            実行日 : ${{ steps.workflow-execution-date.output.execution-date }}
+            実行日 : ${{ steps.workflow-execution-date.outputs.execution-date }}
             ${{ steps.parser.outputs.payload }}
 #            ${{ steps.python_run.outputs.test}}
 
